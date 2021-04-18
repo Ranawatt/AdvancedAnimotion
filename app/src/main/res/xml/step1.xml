@@ -10,10 +10,11 @@
         <OnClick
             app:targetId="@id/red_star"
             app:clickAction="toggle" />
+        <OnClick />
     </Transition>
 
     <!-- Constraints to apply at the start of the animation -->
-    <ConstraintSet android:id="@+id/start">
+    <ConstraintSet>
         <Constraint
             android:id="@+id/red_star"
             android:layout_width="wrap_content"

@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layoutDescription="@xml/step7"
+    app:layoutDescription="@xml/step7_with_hint"
     app:motionDebug="SHOW_PATH">
-
 
     <ImageView
         android:id="@+id/background"
@@ -17,7 +16,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_launcher_background"
         android:scaleType="centerCrop" />
-
 
     <ImageView
         android:id="@+id/moon"
@@ -33,4 +31,11 @@
         android:text="@string/credits"
         android:textSize="24sp"
         android:textColor="?colorOnPrimary" />
+
+    <!-- Added a hint that flies out and fades after the user swipes to the right -->
+    <TextView
+        android:id="@+id/swipe_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/swipe_towards_the_right" />
 </androidx.constraintlayout.motion.widget.MotionLayout>
