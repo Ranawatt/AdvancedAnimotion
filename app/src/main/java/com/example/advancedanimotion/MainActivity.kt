@@ -72,6 +72,12 @@ private val data = listOf(
         "Changes applied from step 8",
         Step8CompletedActivity::class,
         highlight = true
+    ),
+    Step("Step 9",
+        "Carousel view with motion layout",
+        "Learn how to use Motion Layout to build Carousel view using multiple images",
+        Step9Activity::class,
+        highlight = true
     )
 )
 
@@ -116,7 +122,7 @@ class MainViewHolder(val cardView: CardView) : RecyclerView.ViewHolder(cardView)
             context.startActivity(intent)
         }
         val color = if (step.highlight) {
-            context.resources.getColor(R.color.secondaryLightColor)
+            context.resources.getColor(R.color.secondaryLightColor, Resources.getSystem().newTheme())
         } else {
             context.resources.getColor(R.color.primaryTextColor)
         }
