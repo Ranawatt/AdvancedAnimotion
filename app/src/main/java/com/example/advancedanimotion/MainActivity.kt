@@ -74,9 +74,14 @@ private val data = listOf(
         highlight = true
     ),
     Step("Step 9",
+        "Carousel view with motion helper",
+        "Learn helper view to build Carousel view using multiple images",
+        Step9Activity::class
+    ),
+    Step("Completed: Step 9",
         "Carousel view with motion layout",
         "Learn how to use Motion Layout to build Carousel view using multiple images",
-        Step9Activity::class,
+        Step9CompletedActivity::class,
         highlight = true
     )
 )

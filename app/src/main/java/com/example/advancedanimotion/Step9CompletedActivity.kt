@@ -46,17 +46,12 @@ class Step9CompletedActivity : AppCompatActivity() {
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        var extra = intent.extras
-        if (extra != null){
+
+        if (intent.extras == null){
             Loader.normalMenuStartUp(this)
             return
         }
-        setupActivity(extra!!)
-        setupCarousel()
-//        setContentView(R.layout.activity_step9_completed)
-    }
-    private fun setupActivity(extra: Bundle) {
-        layoutname = extra.getString(Loader.KEY)!!
+        layoutname = intent.extras?.getString(Loader.KEY)!!
         var id = applicationContext.resources.getIdentifier(
             layoutname,
             "layout",
@@ -65,9 +60,9 @@ class Step9CompletedActivity : AppCompatActivity() {
         setContentView(id)
         val root = findViewById<View>(android.R.id.content).rootView as ViewGroup
         val mlView = findViewById<View>(R.id.motionLayout)
-        var mMotionLayout = if (mlView != null) mlView as MotionLayout else Loader.findMotionLayout(
-            root
-        )
+        if (mlView != null) mlView else Loader.findMotionLayout(root)
+        setupCarousel()
+//        setContentView(R.layout.activity_step9_completed)
     }
 
     private fun setupCarousel() {
