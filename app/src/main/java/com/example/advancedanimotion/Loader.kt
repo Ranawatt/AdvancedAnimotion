@@ -61,14 +61,13 @@ object Loader {
 
     private fun getLayouts(filter: Test?): Array<String> {
         val list = ArrayList<String>()
-//        val f: Array<Field> = layout::class.java.getDeclaredFields()
-//
-//        for (i in f.indices) {
-//            val name = f[i].name
-//            if (filter == null || filter.test(name)) {
-//                list.add(name)
-//            }
-//        }
+        val f: Array<Field> = R.layout::class.java.getDeclaredFields()
+        for (i in f.indices) {
+            val name = f[i].name
+            if (filter == null || filter.test(name)) {
+                list.add(name)
+            }
+        }
         return list.toTypedArray()
     }
 
