@@ -10,7 +10,6 @@
         <OnClick
             app:targetId="@id/red_star"
             app:clickAction="toggle" />
-        <OnClick />
     </Transition>
 
     <!-- Constraints to apply at the start of the animation -->
