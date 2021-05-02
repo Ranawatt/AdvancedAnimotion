@@ -21,6 +21,24 @@ class Step9CompletedActivity : AppCompatActivity() {
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_step9_completed)
+        var extra = intent.extras
+        if (extra != null){
+            Loader.normalMenuStartUp(this)
+            return
+        }
+        setupActivity(extra!!)
+        setupCarousel()
+//        setContentView(R.layout.activity_step9_completed)
     }
+    private fun setupActivity(extra: Bundle) {
+        var preLayout = extra.getString(Loader.KEY)
+        var id = applicationContext.resources.getIdentifier(preLayout, "layout", applicationContext.packageName)
+        setContentView(id)
+    }
+
+    private fun setupCarousel() {
+        TODO("Not yet implemented")
+    }
+
+
 }
