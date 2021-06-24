@@ -118,6 +118,7 @@ class MainViewHolder(val cardView: CardView) : RecyclerView.ViewHolder(cardView)
     val caption: TextView = cardView.findViewById(R.id.caption)
 
     fun bind(step: Step) {
+
         header.text = step.number
         description.text = step.name
         caption.text = step.caption
